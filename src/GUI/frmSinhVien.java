@@ -5,8 +5,10 @@
  */
 package GUI;
 
+import SinhVien.frmDangKiDiem;
 import SinhVien.frmDoiMK;
 import SinhVien.frmThongTinSV;
+import SinhVien.frmXemDiem;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
@@ -192,8 +194,9 @@ public class frmSinhVien extends javax.swing.JFrame {
 
     private void btnXemDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXemDiemActionPerformed
         // TODO add your handling code here:
-//        frmLoaiSanPham frmLSP = new frmLoaiSanPham();
-//        frmLSP.show();
+        this.dispose();
+        frmXemDiem frmXemDiem = new frmXemDiem(id_sv_23);
+        frmXemDiem.show();
     }//GEN-LAST:event_btnXemDiemActionPerformed
 
     private void btnBangNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBangNhanVienActionPerformed
@@ -242,7 +245,9 @@ public class frmSinhVien extends javax.swing.JFrame {
 
     private void btnDangKimonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangKimonActionPerformed
         // TODO add your handling code here:
-        
+        this.dispose();
+        frmDangKiDiem frmDangKi = new frmDangKiDiem(id_sv_23);
+        frmDangKi.show();
     }//GEN-LAST:event_btnDangKimonActionPerformed
     public void confirm(){
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);

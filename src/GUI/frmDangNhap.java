@@ -207,16 +207,32 @@ public class frmDangNhap extends javax.swing.JFrame {
         IdNguoiDung_ = tenDangNhap;
         
         if(vaitro == "Giáo viên"){
-            cauTruyVan = "select * from gv where magv = '"+tenDangNhap+"' " + "and mk = '"+matKhau+"'";
             con = (Connection) Db.DBConnection.ConnetionDB();
-            ResultSet rs = Db.DBConnection.ExcuteQueryGetTable(con, cauTruyVan);
+            
             try{
+                Statement stmt = (Statement) con.createStatement();
+                cauTruyVan = "select * from gv";
+                ResultSet rs = stmt.executeQuery(cauTruyVan);
                 if(rs.next()){
-                    Main.thongBao("Đăng Nhập Thành Công", "Thông Báo", 1);
-                    frmGiaoVien frmGiaoVien = new frmGiaoVien();
-                    frmGiaoVien.show();
-                    this.dispose(); 
+                    String tdnhapData = rs.getString("magv");
+                    String mkhauData = rs.getString("mk");
+
+                    System.out.println("Ma giao vien: " + tdnhapData);
+                    System.out.println("MK giao vien: " + mkhauData);
+
+                    
+                    if (tenDangNhap.equals(tdnhapData) && matKhau.equals(mkhauData)) {
+                        Main.thongBao("Đăng Nhập Thành Công", "Thông Báo", 1);
+                        frmGiaoVien frmGiaoVien = new frmGiaoVien(IdNguoiDung_);
+                        frmGiaoVien.show();
+                        this.dispose(); 
+                    }
+                    else {
+                        GUI.Main.thongBao("Đăng nhập không thành công", "Thông Báo", 1);
+                    }
                 }
+                con.close();
+                stmt.close();
             }
             catch (Exception e) {
                 System.out.println("Lỗi Đăng Nhập");
@@ -230,10 +246,18 @@ public class frmDangNhap extends javax.swing.JFrame {
                 cauTruyVan = "select * from sv";
                 ResultSet rs = stmt.executeQuery(cauTruyVan);
                 if(rs.next()){
-                    Main.thongBao("Đăng Nhập Thành Công", "Thông Báo", 1);
-                    frmSinhVien frmSinhVien = new frmSinhVien(tenDangNhap);
-                    frmSinhVien.show();
-                    this.dispose(); 
+                    String tdnhapData = rs.getString("masv");
+                    String mkhauData = rs.getString("mk");
+                    System.out.println("Ma giao vien: " + tdnhapData);
+                    if (tenDangNhap.equals(tdnhapData) && matKhau.equals(mkhauData)) {
+                        Main.thongBao("Đăng Nhập Thành Công", "Thông Báo", 1);
+                        frmSinhVien frmSinhVien = new frmSinhVien(IdNguoiDung_);
+                        frmSinhVien.show();
+                        this.dispose(); 
+                    }
+                    else {
+                        GUI.Main.thongBao("Đăng nhập không thành công", "Thông Báo", 1);
+                    }
                 }
                 con.close();
                 stmt.close();

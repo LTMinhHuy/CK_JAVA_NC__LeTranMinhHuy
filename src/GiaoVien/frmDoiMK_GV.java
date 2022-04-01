@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package SinhVien;
+package GiaoVien;
 
+import GUI.frmGiaoVien;
+import SinhVien.*;
 import GUI.frmSinhVien;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
@@ -14,19 +16,19 @@ import java.sql.SQLException;
  *
  * @author Admin
  */
-public class frmDoiMK extends javax.swing.JFrame {
+public class frmDoiMK_GV extends javax.swing.JFrame {
     Connection con;
     private String id_sv_23, mkCu;
 
     /**
      * Creates new form frmDoiMK
      */
-    public frmDoiMK(String idSV) {
+    public frmDoiMK_GV(String idSV) {
         initComponents();
         this.id_sv_23 = idSV;
     }
 
-    private frmDoiMK() {
+    private frmDoiMK_GV() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
@@ -36,11 +38,11 @@ public class frmDoiMK extends javax.swing.JFrame {
         
         try {
             Statement stm = (Statement) con.createStatement();
-            String cauTruyVan = "select * from sv";
+            String cauTruyVan = "select * from gv";
             ResultSet rs = stm.executeQuery(cauTruyVan);
             
             if (rs.next()) {
-                if (id_sv_23.equals(rs.getString("masv"))){
+                if (id_sv_23.equals(rs.getString("magv"))){
                     mkCu = rs.getString("mk");
                 }
             }
@@ -57,7 +59,7 @@ public class frmDoiMK extends javax.swing.JFrame {
     // ========= CẬP NHẬP MẬT KHẨU ==================
     public boolean capNhapMK (String mkMoi) {
         try {
-            String SQL = "update sv set mk = N'"+mkMoi+"'" + " where masv = " + id_sv_23;
+            String SQL = "update gv set mk = N'"+mkMoi+"'" + " where magv = " + id_sv_23;
             con = (Connection) Db.DBConnection.ConnetionDB();
             Db.DBConnection.ExcuteQueryUpdateDB(con, SQL);
             GUI.Main.thongBao("Cập nhập mật khẩu thành công !!!", "Thông Báo", 1);
@@ -106,7 +108,7 @@ public class frmDoiMK extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 204));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assignment/image/secrecy-icon.png"))); // NOI18N
-        jLabel1.setText("ĐỔI MẬT KHẨU SV");
+        jLabel1.setText("ĐỔI MẬT KHẨU");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Xác nhận mật khẩu mới");
@@ -167,14 +169,14 @@ public class frmDoiMK extends javax.swing.JFrame {
                     .addComponent(xnMkNoiTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(152, Short.MAX_VALUE)
+                .addContainerGap(169, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnxacNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(157, 157, 157))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(150, 150, 150))))
+                        .addGap(161, 161, 161))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnxacNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(157, 157, 157))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(361, Short.MAX_VALUE)
@@ -217,9 +219,6 @@ public class frmDoiMK extends javax.swing.JFrame {
         String mkCuNhap = mkCuTxt.getText();
         String mkMoi = mkMoiTxt.getText();
         String mkMoiXn = xnMkNoiTxt.getText();
-
-        
-        System.err.println("==== MK CU CSDL =====: " + mkCu + "  ===== MẬT KHẨU NHẬP VÀO === " + mkCuNhap);
         
 
         
@@ -275,8 +274,8 @@ public class frmDoiMK extends javax.swing.JFrame {
     private void btnQuaylaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuaylaiActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        frmSinhVien frmSinhVien = new frmSinhVien(id_sv_23);
-        frmSinhVien.show();
+        frmGiaoVien frmGiaoVien = new frmGiaoVien(id_sv_23);
+        frmGiaoVien.show();
     }//GEN-LAST:event_btnQuaylaiActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -301,20 +300,23 @@ public class frmDoiMK extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmDoiMK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmDoiMK_GV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmDoiMK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmDoiMK_GV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmDoiMK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmDoiMK_GV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmDoiMK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmDoiMK_GV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmDoiMK().setVisible(true);
+                new frmDoiMK_GV().setVisible(true);
             }
         });
     }

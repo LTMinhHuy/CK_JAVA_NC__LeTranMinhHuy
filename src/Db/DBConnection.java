@@ -9,13 +9,6 @@ package Db;
  *
  * @author Muhammad Fakhar
  */
-
-import Obj.Book;
-import Obj.Borrower;
-import Obj.Library;
-import Obj.Loan;
-import Obj.Members;
-import Obj.Person;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
