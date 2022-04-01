@@ -13,9 +13,9 @@ import java.util.List;
  */
 abstract public class Person {
     private int id;
-    private String Name, Address, PhoneNo, Password;
+    private String Name_23, Address_23, PhoneNo_23, Password_23;
     static int currId = 0;
-    public Person(int id, String Name, String Address, String PhoneNo, String password) {
+    public Person(int id, String Name_23, String Address_23, String PhoneNo_23, String password_23) {
         currId++;
         if(id == 0) // if id is not set already from the database
         {
@@ -25,19 +25,19 @@ abstract public class Person {
         {
                     this.id = id;      
         }
-        this.Name = Name;
-        this.Address = Address;
-        this.PhoneNo = PhoneNo;
-        this.Password = password;
+        this.Name_23 = Name_23;
+        this.Address_23 = Address_23;
+        this.PhoneNo_23 = PhoneNo_23;
+        this.Password_23 = password_23;
     }
     
     public void printInfo()
     {
         System.out.println("Personal Details: ");
         System.out.println("ID: " + id);
-        System.out.println("Name: " + Name);
-        System.out.println("Phone No: " + PhoneNo );
-        System.out.println("Address: " + Address);
+        System.out.println("Name: " + Name_23);
+        System.out.println("Phone No: " + PhoneNo_23);
+        System.out.println("Address: " + Address_23);
     }
 
         /////////////////////////// GETTERS & SETTERS /////////////////////////////////
@@ -50,35 +50,35 @@ abstract public class Person {
     }
 
     public String getName() {
-        return Name;
+        return Name_23;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String Address_23) {
+        this.Name_23 = Address_23;
     }
 
     public String getAddress() {
-        return Address;
+        return Address_23;
     }
 
-    public void setAddress(String Address) {
-        this.Address = Address;
+    public void setAddress(String Address_23) {
+        this.Address_23 = Address_23;
     }
 
     public String getPhoneNo() {
-        return PhoneNo;
+        return PhoneNo_23;
     }
 
-    public void setPhoneNo(String PhoneNo) {
-        this.PhoneNo = PhoneNo;
+    public void setPhoneNo(String PhoneNo_23) {
+        this.PhoneNo_23 = PhoneNo_23;
     }
 
     public String getPassword() {
-        return Password;
+        return Password_23;
     }
 
-    public void setPassword(String Password) {
-        this.Password = Password;
+    public void setPassword(String Password_23) {
+        this.Password_23 = Password_23;
     }
     
 }

@@ -21,67 +21,67 @@ import java.util.Date;
  * @author Admin
  */
 public class Library {
-    private String nameOfLibrary;
-    private Librarian librarian; // assuming only one librarian to look after the library
-    private List<Person> persons;
-    private List<Book> books; // books and DVDs
-    private List<Loan> loans; // history of all the items issued
+    private String nameOfLibrary_23;
+    private Librarian librarian_23; // assuming only one librarian to look after the library
+    private List<Person> persons_23;
+    private List<Book> books_23; // books and DVDs
+    private List<Loan> loans_23; // history of all the items issued
 
     public Library()   // default constructor
     {
-        nameOfLibrary = null;
-        librarian = null;
-        persons = new ArrayList();
-        books = new ArrayList();
-        loans = new ArrayList();
+        nameOfLibrary_23 = null;
+        librarian_23 = null;
+        persons_23 = new ArrayList();
+        books_23 = new ArrayList();
+        loans_23 = new ArrayList();
     }
     public Library(String nameOfLibrary, Librarian librarian, List<Person> persons, List<Book> books, List<Loan> loans) {
-        this.nameOfLibrary = nameOfLibrary;
-        this.librarian = librarian;
-        this.persons = persons;
-        this.books = books;
-        this.loans = loans;
+        this.nameOfLibrary_23 = nameOfLibrary;
+        this.librarian_23 = librarian;
+        this.persons_23 = persons;
+        this.books_23 = books;
+        this.loans_23 = loans;
     }
 
     ///////////////////////////////////////////////// GETTERS & SETTERS /////////////////////////////////////////////////
     public String getNameOfLibrary() {
-        return nameOfLibrary;
+        return nameOfLibrary_23;
     }
 
     public void setNameOfLibrary(String nameOfLibrary) {
-        this.nameOfLibrary = nameOfLibrary;
+        this.nameOfLibrary_23 = nameOfLibrary;
     }
 
     public Librarian getLibrarian() {
-        return librarian;
+        return librarian_23;
     }
 
     public void setLibrarian(Librarian librarian) {
-        this.librarian = librarian;
+        this.librarian_23 = librarian;
     }
 
     public List<Person> getPersons() {
-        return this.persons;
+        return this.persons_23;
     }
 
     public void setPersons(List<Person> persons) {
-        this.persons = persons;
+        this.persons_23 = persons;
     }
 
     public List<Book> getBooks() {
-        return this.books;
+        return this.books_23;
     }
 
     public void setBooks(List<Book> books) {
-        this.books = books;
+        this.books_23 = books;
     }
 
     public List<Loan> getLoans() {
-        return this.loans;
+        return this.loans_23;
     }
 
     public void setLoans(List<Loan> loans) {
-        this.loans = loans;
+        this.loans_23 = loans;
     }
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -91,11 +91,11 @@ public class Library {
     public List<Book> searchBookByTitle(String title)
     {
         List<Book> booksList = new ArrayList<>();
-        for (int i = 0; i < books.size(); i++) 
+        for (int i = 0; i < books_23.size(); i++) 
         {
-            if (books.get(i).getTitle().startsWith(title) && books.get(i).getTitle().contains(title) || books.get(i).getTitle().equalsIgnoreCase(title)) 
+            if (books_23.get(i).getTitle().startsWith(title) && books_23.get(i).getTitle().contains(title) || books_23.get(i).getTitle().equalsIgnoreCase(title)) 
             {
-                booksList.add(books.get(i));
+                booksList.add(books_23.get(i));
             }
         }
         return booksList;
@@ -104,11 +104,11 @@ public class Library {
     public List<Book> searchBookByAuthor(String author)
     {
         List<Book> booksList = new ArrayList<>();
-        for (int i = 0; i < books.size(); i++) 
+        for (int i = 0; i < books_23.size(); i++) 
         {
-            if (books.get(i).getAuthor().startsWith(author) && books.get(i).getAuthor().contains(author) || books.get(i).getAuthor().equalsIgnoreCase(author))
+            if (books_23.get(i).getAuthor().startsWith(author) && books_23.get(i).getAuthor().contains(author) || books_23.get(i).getAuthor().equalsIgnoreCase(author))
             {
-                booksList.add(books.get(i));
+                booksList.add(books_23.get(i));
             }
         }
         return booksList;
@@ -117,11 +117,11 @@ public class Library {
     public List<Book> searchBookBySubject(String subj)
     {
         List<Book> booksList = new ArrayList<>();
-        for (int i = 0; i < books.size(); i++) 
+        for (int i = 0; i < books_23.size(); i++) 
         {
-            if (books.get(i).getSubject().startsWith(subj) && books.get(i).getSubject().contains(subj) || books.get(i).getSubject().equalsIgnoreCase(subj))
+            if (books_23.get(i).getSubject().startsWith(subj) && books_23.get(i).getSubject().contains(subj) || books_23.get(i).getSubject().equalsIgnoreCase(subj))
             {
-                booksList.add(books.get(i));
+                booksList.add(books_23.get(i));
             }
         }
         return booksList;
@@ -129,23 +129,23 @@ public class Library {
     //////////////////////////////////////////////////////////////////////////////////////////
     public void addBook(Book book)
     {
-        this.books.add(book);
+        this.books_23.add(book);
     }
      public void addClerk(checkoutClerk clerk)
     {
-        this.persons.add(clerk);
+        this.persons_23.add(clerk);
     }
      public void addLibrarian(Librarian librarian)
     {
-        this.persons.add(librarian);
+        this.persons_23.add(librarian);
     }
      public void addBorrower(Borrower borrower)
     {
-        this.persons.add(borrower);
+        this.persons_23.add(borrower);
     }
      public void addLoan(Loan loan)
     {
-        this.loans.add(loan);
+        this.loans_23.add(loan);
     }
      
      
@@ -371,7 +371,7 @@ public class Library {
         
        /////////////////////////////////////////////////////////////////////////////////////////////////// 
         
-       //////////////////////////////////// adding borrowed books data //////////////////////////////////////
+       //////////////////////////////////// adding borrowed books data CHUA LAM CSDL //////////////////////////////////////
       
         rs = stmt.executeQuery("SELECT Borrower.borrowerId, borrowedBId from Person INNER JOIN Borrower on Borrower.borrowerId = personId "
                 + "INNER JOIN BorrowedBook on Borrower.borrowerId = BorrowedBook.borrowerId"); // SQL Query
@@ -456,8 +456,8 @@ public class Library {
     }
     public void removeBook(Book book)
     {
-        if (!books.isEmpty()) {
-            books.remove(book);
+        if (!books_23.isEmpty()) {
+            books_23.remove(book);
         }
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////

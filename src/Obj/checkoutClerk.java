@@ -11,8 +11,8 @@ package Obj;
  */
 public class checkoutClerk extends Members {
 
-    public checkoutClerk(float memberSalary, int id, String Name, String Address, String PhoneNo, String password) {
-        super(memberSalary, id, Name, Address, PhoneNo, password);
+    public checkoutClerk(float memberSalary_23, int id_23, String Name_23, String Address_23, String PhoneNo_23, String password_23) {
+        super(memberSalary_23, id_23, Name_23, Address_23, PhoneNo_23, password_23);
     }
     
     @Override

@@ -14,61 +14,61 @@ import java.util.List;
  * @author Admin
  */
 public class Book extends Item{
-    private int id;
-    private String title;
-    private String author;
-    private String subject;
+    private int id_23;
+    private String title_23;
+    private String author_23;
+    private String subject_23;
     private Boolean issueStatus;  //tells if the book is issued to someone or not
-    private List<requestsForHold> onHoldRequests; // all the hold requests for this book
+    private List<requestsForHold> onHoldRequests_23; // all the hold requests for this book
     //int curridNo = 0;  // unqiue for everybook
-    Book(int id, String title, String author, String subj, Boolean issued)
+    public Book(int id, String title, String author, String subj, Boolean issued)
     {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.subject = subj;
+        this.id_23 = id;
+        this.title_23 = title;
+        this.author_23 = author;
+        this.subject_23 = subj;
         this.issueStatus = issued;
-        onHoldRequests = new ArrayList<>();
+        onHoldRequests_23 = new ArrayList<>();
     }
     public void viewBookDetails()
     {
-        System.out.println("Book ID is: " + this.id);
-        System.out.println("Book Title is: " + this.title);
-        System.out.println("Book Subject is: " + this.subject);
-        System.out.println("Author of the Book is: " + this.author);
+        System.out.println("Book ID is: " + this.id_23);
+        System.out.println("Book Title is: " + this.title_23);
+        System.out.println("Book Subject is: " + this.subject_23);
+        System.out.println("Author of the Book is: " + this.author_23);
     }
         /////////////////////////// GETTERS & SETTERS /////////////////////////////////
 
     public int getId() {
-        return id;
+        return id_23;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id_23 = id;
     }
 
     public String getTitle() {
-        return title;
+        return title_23;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.title_23 = title;
     }
 
     public String getAuthor() {
-        return author;
+        return author_23;
     }
 
     public void setAuthor(String author) {
-        this.author = author;
+        this.author_23 = author;
     }
 
     public String getSubject() {
-        return subject;
+        return subject_23;
     }
 
     public void setSubject(String subject) {
-        this.subject = subject;
+        this.subject_23 = subject;
     }
 
     public Boolean getIssueStatus() {
@@ -80,18 +80,18 @@ public class Book extends Item{
     }
 
     public List<requestsForHold> getOnHoldRequests() {
-        return onHoldRequests;
+        return onHoldRequests_23;
     }
     /////////////////////////////////////////////////////////////////////////////////////////
     public void addHoldRequest(requestsForHold req)
     {
-        this.onHoldRequests.add(req);
+        this.onHoldRequests_23.add(req);
     }
     public void removeHoldRequest(int index)
     {
-        if(!onHoldRequests.isEmpty())
+        if(!onHoldRequests_23.isEmpty())
         {
-            onHoldRequests.remove(index);
+            onHoldRequests_23.remove(index);
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -113,9 +113,9 @@ public class Book extends Item{
             }
         }
         // case 2
-        for (int i = 0; i < this.onHoldRequests.size(); i++)
+        for (int i = 0; i < this.onHoldRequests_23.size(); i++)
         {
-            if ((this.onHoldRequests.get(i).getBorrower() == borrower))
+            if ((this.onHoldRequests_23.get(i).getBorrower() == borrower))
             {
                 return 2; // 2 means he already have requested this book
             }
@@ -143,20 +143,20 @@ public class Book extends Item{
         }
         else
         {
-            if (!onHoldRequests.isEmpty()) // checking if the current borrower is first in queue of reservation
+            if (!onHoldRequests_23.isEmpty()) // checking if the current borrower is first in queue of reservation
             {
                 boolean requested = false;
-                for (int i = 0; i < onHoldRequests.size() ; i++)
+                for (int i = 0; i < onHoldRequests_23.size() ; i++)
                 {
-                    if (onHoldRequests.get(i).getBorrower().getId() == borrower.getId()) {
+                    if (onHoldRequests_23.get(i).getBorrower().getId() == borrower.getId()) {
                         requested = true;
                     }
                 }
                 if (requested == true)
                 {
-                    if (onHoldRequests.get(0).getBorrower().getId() == borrower.getId())  // first in queue or not
+                    if (onHoldRequests_23.get(0).getBorrower().getId() == borrower.getId())  // first in queue or not
                     {
-                        borrower.removeHoldRequest(onHoldRequests.get(0));
+                        borrower.removeHoldRequest(onHoldRequests_23.get(0));
                         removeHoldRequest(0); // remove as now he is borrowing it
                     }
                     else // case 2
@@ -173,23 +173,6 @@ public class Book extends Item{
             // he can get the book issued
             setIssueStatus(true);
             return 4;
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        }     
     }
 }

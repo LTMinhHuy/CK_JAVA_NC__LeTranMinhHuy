@@ -12,69 +12,69 @@ import java.util.Date;
  * @author Admin
  */
 public class Loan {
-    private Borrower borrower;
-    private Date issueDate;
-    private Date returnDate;
-    private Members bookIssuer;
-    private Members bookReceiver;
-    private Book book;
+    private Borrower borrower_23;
+    private Date issueDate_23;
+    private Date returnDate_23;
+    private Members bookIssuer_23;
+    private Members bookReceiver_23;
+    private Book book_23;
     //private Item itemObj;
 
     public Loan(Borrower borrower, Date issueDate, Date returnDate, Members bookIssuer, Members bookReceiver, Book book) {
-        this.borrower = borrower;
-        this.issueDate = issueDate;
-        this.returnDate = returnDate;
-        this.bookIssuer = bookIssuer;
-        this.bookReceiver = bookReceiver;
-        this.book = book;
+        this.borrower_23 = borrower;
+        this.issueDate_23 = issueDate;
+        this.returnDate_23 = returnDate;
+        this.bookIssuer_23 = bookIssuer;
+        this.bookReceiver_23 = bookReceiver;
+        this.book_23 = book;
     }
 /////////////////////////////////////// GETTERS & SETTERS /////////////////////////////////////////////
     public Borrower getBorrower() {
-        return borrower;
+        return borrower_23;
     }
 
     public void setBorrower(Borrower borrower) {
-        this.borrower = borrower;
+        this.borrower_23 = borrower;
     }
 
     public Date getIssueDate() {
-        return issueDate;
+        return issueDate_23;
     }
 
     public void setIssueDate(Date issueDate) {
-        this.issueDate = issueDate;
+        this.issueDate_23 = issueDate;
     }
 
     public Date getReturnDate() {
-        return returnDate;
+        return returnDate_23;
     }
 
     public void setReturnDate(Date returnDate) {
-        this.returnDate = returnDate;
+        this.returnDate_23 = returnDate;
     }
 
     public Members getBookIssuer() {
-        return bookIssuer;
+        return bookIssuer_23;
     }
 
     public void setBookIssuer(Members bookIssuer) {
-        this.bookIssuer = bookIssuer;
+        this.bookIssuer_23 = bookIssuer;
     }
 
     public Members getBookReceiver() {
-        return bookReceiver;
+        return bookReceiver_23;
     }
 
     public void setBookReceiver(Members bookReceiver) {
-        this.bookReceiver = bookReceiver;
+        this.bookReceiver_23 = bookReceiver;
     }
 
     public Book getBook() {
-        return book;
+        return book_23;
     }
 
     public void setBook(Book book) {
-        this.book = book;
+        this.book_23 = book;
     }
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,6 +82,6 @@ public class Loan {
     // extending loan date
     public void extendIssueDate(Date newIssueDate) // renewing the issue date
     {
-        this.issueDate = newIssueDate;
+        this.issueDate_23 = newIssueDate;
     }
 }

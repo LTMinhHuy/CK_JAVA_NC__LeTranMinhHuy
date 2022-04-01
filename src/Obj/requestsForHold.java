@@ -12,45 +12,45 @@ import java.util.Date;
  * @author Admin
  */
 public class requestsForHold {
-    private Borrower borrower;
-    private Book book;
-    Date dateOfRequest;
+    private Borrower borrower_23;
+    private Book book_23;
+    Date dateOfRequest_23;
 
     public requestsForHold(Borrower borrower, Book book, Date dateOfRequest) {
-        this.borrower = borrower;
-        this.book = book;
-        this.dateOfRequest = dateOfRequest;
+        this.borrower_23 = borrower;
+        this.book_23 = book;
+        this.dateOfRequest_23 = dateOfRequest;
     }
     
     public void holdRequestsInfo()
     {
-        System.out.println("The User " + borrower.getName() + " Requested Book: " + book.getTitle() + " On: " + dateOfRequest);
+        System.out.println("The User " + borrower_23.getName() + " Requested Book: " + book_23.getTitle() + " On: " + dateOfRequest_23);
     }
     
         /////////////////////////// GETTERS & SETTERS /////////////////////////////////
 
     public Borrower getBorrower() {
-        return borrower;
+        return borrower_23;
     }
 
     public void setBorrower(Borrower borrower) {
-        this.borrower = borrower;
+        this.borrower_23 = borrower;
     }
 
     public Book getBook() {
-        return book;
+        return book_23;
     }
 
     public void setBook(Book book) {
-        this.book = book;
+        this.book_23 = book;
     }
 
     public Date getDateOfRequest() {
-        return dateOfRequest;
+        return dateOfRequest_23;
     }
 
     public void setDateOfRequest(Date dateOfRequest) {
-        this.dateOfRequest = dateOfRequest;
+        this.dateOfRequest_23 = dateOfRequest;
     }
     
 }

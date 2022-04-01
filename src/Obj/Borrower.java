@@ -14,26 +14,26 @@ import java.util.List;
  */
 public class Borrower extends Person {
     
-    private List<Loan> booksBorrowed; // books currently borrowed (Loans)
-    private List<requestsForHold> holdRequests; // requests for put the book on hold by this user
+    private List<Loan> booksBorrowed_23; // books currently borrowed (Loans)
+    private List<requestsForHold> holdRequests_23; // requests for put the book on hold by this user
 
     public Borrower(int id, String Name, String Address, String PhoneNo, String Password)
     {
         super(id, Name, Address, PhoneNo, Password);
-        this.booksBorrowed = new ArrayList();
-        this.holdRequests = new ArrayList();
+        this.booksBorrowed_23 = new ArrayList();
+        this.holdRequests_23 = new ArrayList();
     }
 
     ///////////////////////////////////// PRINTING FUNCTIONS ///////////////////////////////////////////
     public void printBorrowedBooks()
     {
-        if (!booksBorrowed.isEmpty())
+        if (!booksBorrowed_23.isEmpty())
         { 
             System.out.println("Borrowed Books are: ");
                         
-            for (int i = 0; i < booksBorrowed.size(); i++)
+            for (int i = 0; i < booksBorrowed_23.size(); i++)
             {                      
-                booksBorrowed.get(i).getBook().viewBookDetails();
+                booksBorrowed_23.get(i).getBook().viewBookDetails();
             }
         }
         else
@@ -42,13 +42,13 @@ public class Borrower extends Person {
     
     public void printHoldRequests()
     {
-         if (!holdRequests.isEmpty())
+         if (!holdRequests_23.isEmpty())
         { 
             System.out.println("Borrowed Books are: ");
                         
-            for (int i = 0; i < holdRequests.size(); i++)
+            for (int i = 0; i < holdRequests_23.size(); i++)
             {                      
-                holdRequests.get(i).getBook().viewBookDetails();
+                holdRequests_23.get(i).getBook().viewBookDetails();
             }
         }
         else
@@ -62,39 +62,39 @@ public class Borrower extends Person {
     }
     //////////////////////////////////// ADD & REMOVE FUNCTIONS FOR BOOKS & REQUESTS ////////////////////////////
     public void borrowBook(Loan e) {
-        booksBorrowed.add(e);
+        booksBorrowed_23.add(e);
     }
 
     public void removeBorrowedBook(Loan i) 
     {
-        booksBorrowed.remove(i);
+        booksBorrowed_23.remove(i);
     }
     
     
     public void addHoldRequest(requestsForHold e) {
-        holdRequests.add(e);
+        holdRequests_23.add(e);
     }
 
     public void removeHoldRequest(requestsForHold i) 
     {
-        holdRequests.remove(i);
+        holdRequests_23.remove(i);
     }
 
     /////////////////////////// GETTERS & SETTERS /////////////////////////////////
     public List<Loan> getBooksBorrowed() {
-        return booksBorrowed;
+        return booksBorrowed_23;
     }
 
     public void setBooksBorrowed(List<Loan> booksBorrowed) {
-        this.booksBorrowed = booksBorrowed;
+        this.booksBorrowed_23 = booksBorrowed;
     }
 
     public List<requestsForHold> getHoldRequests() {
-        return holdRequests;
+        return holdRequests_23;
     }
 
     public void setHoldRequests(List<requestsForHold> holdRequests) {
-        this.holdRequests = holdRequests;
+        this.holdRequests_23 = holdRequests;
     }
     
     
@@ -106,15 +106,15 @@ public class Borrower extends Person {
     }
     public void addBooksBorrowed(Loan loan)
     {
-        booksBorrowed.add(loan);
+        booksBorrowed_23.add(loan);
     }
      public void removeBooksBorrowed(int index) // by index
     {
-        booksBorrowed.remove(index);
+        booksBorrowed_23.remove(index);
     }
       public void removeBooksBorrowed(Loan loan)
     {
-        booksBorrowed.remove(loan);
+        booksBorrowed_23.remove(loan);
     }
     
 }
