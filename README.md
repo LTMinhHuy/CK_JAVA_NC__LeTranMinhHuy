@@ -1,6 +1,6 @@
 # BÀI TẬP JAVA CUỐI KÌ
 
-# QUẢN LÝ THƯ VIỆN SÁCH
+# QUẢN LÝ THƯ MÔN HỌC
 
 # MÔ TẢ
   > GVHD: Đỗ Phú Huy
