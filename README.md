@@ -17,6 +17,8 @@
 
   # MỘT SỐ ẢNH SẢN PHẨM
 
+  [Xem chi tiết tại đây !!!](https://github.com/LTMinhHuy/CK_JAVA_NC__LeTranMinhHuy/tree/main/preview)
+
   ![sv1](https://github.com/LTMinhHuy/CK_JAVA_NC__LeTranMinhHuy/blob/main/preview/sv1.png)
 
   ![sv2](https://github.com/LTMinhHuy/CK_JAVA_NC__LeTranMinhHuy/blob/main/preview/sv2.png)
