@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package SinhVien;
+package GiaoVien;
 
+import GUI.frmGiaoVien;
+import SinhVien.*;
 import GUI.frmSinhVien;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
@@ -16,19 +18,19 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author TuanTuti
  */
-public class frmXemDiem extends javax.swing.JFrame {
+public class frmLichDay extends javax.swing.JFrame {
     Connection con, con1;
     private String id_sv_23;
     /**
      * Creates new form frmLoaiSanPham
      */
-    public frmXemDiem(String idSv) {
+    public frmLichDay(String idSv) {
         initComponents();
         this.id_sv_23 = idSv;
 //        LayDuLieu("221");
     }
 
-    private frmXemDiem() {
+    private frmLichDay() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -53,6 +55,7 @@ public class frmXemDiem extends javax.swing.JFrame {
         tenhpTk = new javax.swing.JTextField();
         btnQuayLai = new javax.swing.JButton();
         kiTk = new javax.swing.JComboBox<>();
+        lblTTLSP1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbBangDiem = new javax.swing.JTable();
@@ -136,53 +139,62 @@ public class frmXemDiem extends javax.swing.JFrame {
         kiTk.setForeground(new java.awt.Color(153, 153, 0));
         kiTk.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "221", "121" }));
 
+        lblTTLSP1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblTTLSP1.setForeground(new java.awt.Color(0, 0, 204));
+        lblTTLSP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/search.png"))); // NOI18N
+        lblTTLSP1.setText("TRA CỨU");
+
         javax.swing.GroupLayout pnlformLayout = new javax.swing.GroupLayout(pnlform);
         pnlform.setLayout(pnlformLayout);
         pnlformLayout.setHorizontalGroup(
             pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlformLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblTenLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblMaLoaiSP)
-                        .addGroup(pnlformLayout.createSequentialGroup()
+                    .addGroup(pnlformLayout.createSequentialGroup()
+                        .addGroup(pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblMoTa)
-                            .addGap(82, 82, 82)
-                            .addGroup(pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lhptk, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                                .addComponent(tinchiTk)
-                                .addComponent(kiTk, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(pnlformLayout.createSequentialGroup()
                             .addComponent(lblTimKiem)
-                            .addGap(47, 47, 47)
+                            .addComponent(lblMaLoaiSP)
+                            .addComponent(lblTenLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lhptk)
+                            .addComponent(tinchiTk)
+                            .addComponent(kiTk, 0, 81, Short.MAX_VALUE)
                             .addComponent(tenhpTk)))
                     .addGroup(pnlformLayout.createSequentialGroup()
                         .addComponent(btnQuayLai)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnTimkiem)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(44, 44, 44))
+            .addGroup(pnlformLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(lblTTLSP1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlformLayout.setVerticalGroup(
             pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlformLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblMoTa)
-                    .addComponent(kiTk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(lblTTLSP1)
+                .addGap(21, 21, 21)
+                .addGroup(pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(kiTk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMoTa))
                 .addGap(18, 18, 18)
                 .addGroup(pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTenLoai)
-                    .addComponent(tinchiTk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tinchiTk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTenLoai))
                 .addGap(18, 18, 18)
                 .addGroup(pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblMaLoaiSP)
-                    .addComponent(lhptk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(lhptk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMaLoaiSP))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tenhpTk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(pnlformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnQuayLai, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTimkiem))
@@ -197,24 +209,24 @@ public class frmXemDiem extends javax.swing.JFrame {
         tbBangDiem.setForeground(new java.awt.Color(0, 0, 204));
         tbBangDiem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "STT", "Mã lớp học phần", "Mã tín chỉ", "Tên học phần", "Kì", "Điểm"
+                "STT", "Mã lớp học phần", "Mã tín chỉ", "Tên học phần", "Kì"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -239,8 +251,8 @@ public class frmXemDiem extends javax.swing.JFrame {
 
         lblTTLSP.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTTLSP.setForeground(new java.awt.Color(0, 0, 204));
-        lblTTLSP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assignment/image/sanpham.png"))); // NOI18N
-        lblTTLSP.setText("BẢNG ĐIỂM SINH VIÊN");
+        lblTTLSP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/date.png"))); // NOI18N
+        lblTTLSP.setText("LỊCH GIẢNG DẠY");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -249,7 +261,7 @@ public class frmXemDiem extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblTTLSP)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -261,7 +273,7 @@ public class frmXemDiem extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblTTLSP)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -271,10 +283,10 @@ public class frmXemDiem extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnlform, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,8 +325,6 @@ public class frmXemDiem extends javax.swing.JFrame {
         malhp_23 = kiemtraDauvaoLoc(malhp_23);
         matc_23 = kiemtraDauvaoLoc(matc_23);
         tenlhp_23 = kiemtraDauvaoLoc(tenlhp_23);
-
-
         
         
         con = (Connection) Db.DBConnection.ConnetionDB();
@@ -322,18 +332,17 @@ public class frmXemDiem extends javax.swing.JFrame {
         try {
             Statement stm = (Statement) con.createStatement();
             
-            String cauTruyVan = "select lhp.malhp, lhp.matc, lhp.tenlhp, lhp.maki, diemdk.diem "
-                              + "from diemdk, lhp "
-                              + "where masv = " + id_sv_23 
+            String cauTruyVan = "select lhp.malhp, lhp.matc, lhp.tenlhp, lhp.maki, lhp.tg "
+                              + "from lhp "
+                              + "where magv = " + id_sv_23 
                               + " and lhp.maki " + maki_23 
                               + " and lhp.malhp " + malhp_23
                               + " and lhp.matc " + matc_23 
-                              + " and tenlhp " + tenlhp_23
-                              + " and lhp.malhp = diemdk.malhp";
+                              + " and lhp.tenlhp " + tenlhp_23;
             System.out.println("CauTruyVan: " + cauTruyVan);
             ResultSet rs = stm.executeQuery(cauTruyVan);
             
-            Object [] obj = new Object[] {"STT","Mã học phần", "Mã tín chỉ", "Tên học phần", "Kì", "Điểm"};
+            Object [] obj = new Object[] {"STT","Mã học phần", "Mã tín chỉ", "Tên học phần", "Kì", "Thời gian"};
             DefaultTableModel tableModel = new DefaultTableModel(obj,0);
             tbBangDiem.setModel(tableModel);
             
@@ -344,7 +353,7 @@ public class frmXemDiem extends javax.swing.JFrame {
                 item[2] = rs.getString("matc");
                 item[3] = rs.getString("tenlhp");
                 item[4] = rs.getString("maki");
-                item[5] = rs.getString("diem");
+                item[5] = rs.getString("tg");
                 tableModel.addRow(item);
             }
             
@@ -372,58 +381,38 @@ public class frmXemDiem extends javax.swing.JFrame {
         System.out.println("Đã click vào bảng");
     }//GEN-LAST:event_tbBangDiemMouseClicked
 
-    private void btnTimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimkiemActionPerformed
-        String ki_23 = kiTk.getSelectedItem().toString();
-        String maTinchi = tinchiTk.getText();
-        String lopHp = lhptk.getText();
-        String tenLhp = tenhpTk.getText();
-        
-        // GỌI HÀM TÌM KIẾM
-        LayDuLieu(ki_23, lopHp, maTinchi, tenLhp);
-
-    }//GEN-LAST:event_btnTimkiemActionPerformed
+    private void btnQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaiActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        frmGiaoVien frmGiaoVien = new frmGiaoVien(id_sv_23);
+        frmGiaoVien.show();
+    }//GEN-LAST:event_btnQuayLaiActionPerformed
 
     private void tenhpTkKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tenhpTkKeyReleased
-        // TODO add your handling code here:
-//        String tuKhoaCanTim = txtTimKiem.getText();
-//        String SQL = "select * from LoaiSanPham where"
-//                + " TenLoai like N'%"+tuKhoaCanTim+"%' or MoTa like N'%"+tuKhoaCanTim+"%'";
-//        ResultSet rs = Main.connection.ExcuteQueryGetTable(SQL);
-//        Object [] obj = new Object[] {"STT","Mã Loại","Tên Loại","Mô Tả"};
-//        DefaultTableModel tableModel = new DefaultTableModel(obj,0);
-//        tblLoaiSanPham.setModel(tableModel);
-//        try {
-//            while(rs.next()){
-//                Object[] item = new Object[4];
-//                item[0] = tblLoaiSanPham.getRowCount() + 1;
-//                item[1] = rs.getInt("MaLoaiSP");
-//                item[2] = rs.getString("TenLoai");
-//                item[3] = rs.getString("MoTa");
-//                tableModel.addRow(item);
-//            }
-//        }catch (SQLException ex) {
-//            System.out.println(ex.toString());
-//        }
+
     }//GEN-LAST:event_tenhpTkKeyReleased
-
-    private void tinchiTkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tinchiTkActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tinchiTkActionPerformed
-
-    private void lhptkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lhptkActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lhptkActionPerformed
 
     private void tenhpTkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tenhpTkActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tenhpTkActionPerformed
 
-    private void btnQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaiActionPerformed
+    private void btnTimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimkiemActionPerformed
+        String ki_23 = kiTk.getSelectedItem().toString();
+        String maTinchi = tinchiTk.getText();
+        String lopHp = lhptk.getText();
+        String tenLhp = tenhpTk.getText();
+
+        // GỌI HÀM TÌM KIẾM
+        LayDuLieu(ki_23, lopHp, maTinchi, tenLhp);
+    }//GEN-LAST:event_btnTimkiemActionPerformed
+
+    private void lhptkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lhptkActionPerformed
         // TODO add your handling code here:
-        this.dispose();
-        frmSinhVien frmSinhVien = new frmSinhVien(id_sv_23);
-        frmSinhVien.show();
-    }//GEN-LAST:event_btnQuayLaiActionPerformed
+    }//GEN-LAST:event_lhptkActionPerformed
+
+    private void tinchiTkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tinchiTkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tinchiTkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -442,14 +431,26 @@ public class frmXemDiem extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmXemDiem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLichDay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmXemDiem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLichDay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmXemDiem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLichDay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmXemDiem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLichDay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -457,7 +458,7 @@ public class frmXemDiem extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new frmXemDiem().setVisible(true);
+            new frmLichDay().setVisible(true);
         });
     }
 
@@ -471,6 +472,7 @@ public class frmXemDiem extends javax.swing.JFrame {
     private javax.swing.JLabel lblMaLoaiSP;
     private javax.swing.JLabel lblMoTa;
     private javax.swing.JLabel lblTTLSP;
+    private javax.swing.JLabel lblTTLSP1;
     private javax.swing.JLabel lblTenLoai;
     private javax.swing.JLabel lblTimKiem;
     private javax.swing.JTextField lhptk;

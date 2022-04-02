@@ -5,7 +5,9 @@
  */
 package GUI;
 
+import GiaoVien.frmChamDiem;
 import GiaoVien.frmDoiMK_GV;
+import GiaoVien.frmLichDay;
 import GiaoVien.frmThongTinGV;
 import SinhVien.frmDangKiDiem;
 import SinhVien.frmThongTinSV;
@@ -196,8 +198,8 @@ public class frmGiaoVien extends javax.swing.JFrame {
     private void btnXemDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXemDiemActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        frmXemDiem frmXemDiem = new frmXemDiem(id_sv_23);
-        frmXemDiem.show();
+        frmChamDiem frmChamDiem = new frmChamDiem(id_sv_23);
+        frmChamDiem.show();
     }//GEN-LAST:event_btnXemDiemActionPerformed
 
     private void btnBangNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBangNhanVienActionPerformed
@@ -247,8 +249,8 @@ public class frmGiaoVien extends javax.swing.JFrame {
     private void btnDangKimonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangKimonActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        frmDangKiDiem frmDangKi = new frmDangKiDiem(id_sv_23);
-        frmDangKi.show();
+        frmLichDay frmLichDay = new frmLichDay(id_sv_23);
+        frmLichDay.show();
     }//GEN-LAST:event_btnDangKimonActionPerformed
     public void confirm(){
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);

@@ -239,7 +239,7 @@ public class frmDangNhap extends javax.swing.JFrame {
             }
         }
         else if(vaitro == "Sinh viên"){
-            con = (Connection) Db.DBConnection.ConnetionDB();
+             con = (Connection) Db.DBConnection.ConnetionDB();
             
             try{
                 Statement stmt = (Statement) con.createStatement();
@@ -248,7 +248,11 @@ public class frmDangNhap extends javax.swing.JFrame {
                 if(rs.next()){
                     String tdnhapData = rs.getString("masv");
                     String mkhauData = rs.getString("mk");
-                    System.out.println("Ma giao vien: " + tdnhapData);
+
+                    System.out.println("Ma sinh vien: " + tdnhapData);
+                    System.out.println("MK sinh vien: " + mkhauData);
+
+                    
                     if (tenDangNhap.equals(tdnhapData) && matKhau.equals(mkhauData)) {
                         Main.thongBao("Đăng Nhập Thành Công", "Thông Báo", 1);
                         frmSinhVien frmSinhVien = new frmSinhVien(IdNguoiDung_);
