@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 02, 2022 lúc 05:19 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 7.3.30
+-- Host: 127.0.0.1
+-- Generation Time: May 11, 2022 at 02:59 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `qlmonhoc`
+-- Database: `qlmonhoc`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `diemdk`
+-- Table structure for table `diemdk`
 --
 
 CREATE TABLE `diemdk` (
@@ -34,7 +34,7 @@ CREATE TABLE `diemdk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `diemdk`
+-- Dumping data for table `diemdk`
 --
 
 INSERT INTO `diemdk` (`masv`, `malhp`, `diem`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `diemdk` (`masv`, `malhp`, `diem`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `gv`
+-- Table structure for table `gv`
 --
 
 CREATE TABLE `gv` (
@@ -56,17 +56,17 @@ CREATE TABLE `gv` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `gv`
+-- Dumping data for table `gv`
 --
 
 INSERT INTO `gv` (`magv`, `hoten`, `mk`, `khoa`) VALUES
-('123123123', 'Đỗ Phú Huy', '123', 'Dien Dien Tu'),
-('123123124', 'Lê Thiện Nhật Quan', '123', 'Dien Dien Tu');
+('123123123', 'Do Phu Huy', '123', 'Dien Dien Tu'),
+('123123124', 'Le Thien Nhat Quang', '123', 'Dien Dien Tu');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `ki`
+-- Table structure for table `ki`
 --
 
 CREATE TABLE `ki` (
@@ -75,7 +75,7 @@ CREATE TABLE `ki` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `ki`
+-- Dumping data for table `ki`
 --
 
 INSERT INTO `ki` (`maki`, `ten ki`) VALUES
@@ -85,7 +85,7 @@ INSERT INTO `ki` (`maki`, `ten ki`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `lhp`
+-- Table structure for table `lhp`
 --
 
 CREATE TABLE `lhp` (
@@ -98,18 +98,20 @@ CREATE TABLE `lhp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `lhp`
+-- Dumping data for table `lhp`
 --
 
 INSERT INTO `lhp` (`malhp`, `matc`, `magv`, `maki`, `tenlhp`, `tg`) VALUES
 ('221001', '221123', '123123123', '221', 'Java NC', 'T4 (1-2)'),
 ('221002', '221124', '123123124', '221', 'TH Java NC', 'T4 (1-2)'),
-('221003', '221125', '123123124', '221', 'Lập trình C#', 'T4 (3-4)');
+('221003', '221125', '123123124', '221', 'Lap trinh C#', 'T4 (3-4)'),
+('221004', '221126', '123123123', '221', 'Lap trinh truc quan', 'T5(1-2)'),
+('221005', '221127', '123123123', '221', 'Cau truc du lieu va giai thuat', 'T5(3-4)');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sv`
+-- Table structure for table `sv`
 --
 
 CREATE TABLE `sv` (
@@ -124,11 +126,11 @@ CREATE TABLE `sv` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `sv`
+-- Dumping data for table `sv`
 --
 
 INSERT INTO `sv` (`masv`, `hoten`, `mk`, `lop`, `khoa`, `nsinh`, `cmnn`, `tknn`) VALUES
-('191150531022102', 'Le Tran Minh Huy', '1234', '19T2', 'Dien Dien Tu', '2001-10-17', '09051231342', '3143215465345'),
+('191150531022102', 'Le Tran Minh Huy', '123', '19T2', 'Dien Dien Tu', '2001-10-17', '09051231342', '3143215465345'),
 ('191150531022104', 'Le Tran A', '123', '19T2', 'Dien Dien Tu', '2001-10-17', '09051231342', '3143215465345'),
 ('191150531022105', 'Le Tran S', '123', '19T2', 'Dien Dien Tu', '2001-10-17', '09051231342', '3143215465345'),
 ('191150531022106', 'Le Tran M', '123', '19T2', 'Dien Dien Tu', '2001-10-17', '09051231342', '3143215465345'),
@@ -138,7 +140,7 @@ INSERT INTO `sv` (`masv`, `hoten`, `mk`, `lop`, `khoa`, `nsinh`, `cmnn`, `tknn`)
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tinchi`
+-- Table structure for table `tinchi`
 --
 
 CREATE TABLE `tinchi` (
@@ -149,39 +151,41 @@ CREATE TABLE `tinchi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `tinchi`
+-- Dumping data for table `tinchi`
 --
 
 INSERT INTO `tinchi` (`matc`, `tentc`, `nd`, `sotc`) VALUES
-('221123', 'Lập trình hướng đối tượng java nâng cao', 'Lập trình hướng đối tượng java nâng cao', 2),
-('221124', 'TH Lập trình hướng đối tượng java nâng cao', 'TH Lập trình hướng đối tượng java nâng cao', 1),
-('221125', 'Lập trình C#', 'Lập trình C#', 2);
+('221123', 'Lap trinh huong doi tuong Java NC', 'Lập trình hướng đối tượng java nâng cao', 2),
+('221124', 'TH Lap trinh huong doi tuong Java NC', 'TH Lập trình hướng đối tượng java nâng cao', 1),
+('221125', 'Lap trinh C#', 'Lập trình C#', 2),
+('221126', 'Lap trinh truc quan', 'Lap trinh truc quan', 3),
+('221127', 'Cau truc du lieu va giai thuat', 'Cau truc du lieu va giai thuat', 3);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `diemdk`
+-- Indexes for table `diemdk`
 --
 ALTER TABLE `diemdk`
   ADD KEY `masv` (`masv`),
   ADD KEY `malhp` (`malhp`);
 
 --
--- Chỉ mục cho bảng `gv`
+-- Indexes for table `gv`
 --
 ALTER TABLE `gv`
   ADD PRIMARY KEY (`magv`);
 
 --
--- Chỉ mục cho bảng `ki`
+-- Indexes for table `ki`
 --
 ALTER TABLE `ki`
   ADD PRIMARY KEY (`maki`);
 
 --
--- Chỉ mục cho bảng `lhp`
+-- Indexes for table `lhp`
 --
 ALTER TABLE `lhp`
   ADD PRIMARY KEY (`malhp`),
@@ -190,31 +194,32 @@ ALTER TABLE `lhp`
   ADD KEY `maki` (`maki`);
 
 --
--- Chỉ mục cho bảng `sv`
+-- Indexes for table `sv`
 --
 ALTER TABLE `sv`
   ADD PRIMARY KEY (`masv`);
 
 --
--- Chỉ mục cho bảng `tinchi`
+-- Indexes for table `tinchi`
 --
 ALTER TABLE `tinchi`
   ADD PRIMARY KEY (`matc`);
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `diemdk`
+-- Constraints for table `diemdk`
 --
 ALTER TABLE `diemdk`
   ADD CONSTRAINT `diemdk_ibfk_1` FOREIGN KEY (`masv`) REFERENCES `sv` (`masv`) ON DELETE CASCADE,
   ADD CONSTRAINT `diemdk_ibfk_2` FOREIGN KEY (`malhp`) REFERENCES `lhp` (`malhp`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `lhp`
+-- Constraints for table `lhp`
 --
+
 ALTER TABLE `lhp`
   ADD CONSTRAINT `lhp_ibfk_1` FOREIGN KEY (`matc`) REFERENCES `tinchi` (`matc`) ON DELETE CASCADE,
   ADD CONSTRAINT `lhp_ibfk_2` FOREIGN KEY (`magv`) REFERENCES `gv` (`magv`) ON DELETE CASCADE,

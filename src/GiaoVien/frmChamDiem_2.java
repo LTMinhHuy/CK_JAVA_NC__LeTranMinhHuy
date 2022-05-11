@@ -290,11 +290,11 @@ public class frmChamDiem_2 extends javax.swing.JFrame {
             
             String cauTruyVan = "select diemdk.masv, lhp.malhp, lhp.matc, diemdk.diem "
                               + "from lhp, diemdk "
-                              + "where magv = " + id_sv_23 
+                              + "where lhp.magv = " + id_sv_23 
                               + " and lhp.maki = " + maki_23 
-                              + " and diemdk.malhp = " + malhp_23;
-                              //+ " and lhp.matc " + matc_23 
-                              //+ " and lhp.tenlhp " + tenlhp_23;
+                              + " and lhp.malhp = diemdk.malhp "
+                              + " and lhp.malhp = " + malhp_23 ;
+            
             System.out.println("CauTruyVan: " + cauTruyVan);
             ResultSet rs = stm.executeQuery(cauTruyVan);
             

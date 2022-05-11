@@ -82,11 +82,13 @@
                               <Component id="lblTenLoai" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lhptk" max="32767" attributes="0"/>
-                              <Component id="tinchiTk" alignment="0" max="32767" attributes="0"/>
-                              <Component id="kiTk" alignment="0" pref="81" max="32767" attributes="0"/>
-                              <Component id="tenhpTk" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lhptk" min="-2" pref="81" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="kiTk" alignment="0" pref="81" max="32767" attributes="0"/>
+                                  <Component id="tenhpTk" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="tinchiTk" min="-2" pref="81" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -95,7 +97,7 @@
                           <Component id="btnTimkiem" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
@@ -116,20 +118,20 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lhptk" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblMaLoaiSP" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="tinchiTk" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblTenLoai" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lhptk" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblMaLoaiSP" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblTimKiem" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="tenhpTk" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnQuayLai" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="btnTimkiem" alignment="3" min="-2" max="-2" attributes="0"/>

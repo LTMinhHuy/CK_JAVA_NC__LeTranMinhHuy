@@ -6,6 +6,7 @@
 package GUI;
 
 import Db.DBConnection;
+import java.awt.Frame;
 import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.AudioInputStream;
@@ -25,7 +26,8 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         frmDangNhap frmDangNhap_23 = new frmDangNhap();
-        frmDangNhap_23.show();
+        Loading Loading = new Loading(frmDangNhap_23, true);
+        Loading.show();
     }
     public static void thongBao(String noiDungThongBao,String tieuDeThongBao,int icon){
         JOptionPane.showMessageDialog(new JFrame(),noiDungThongBao,tieuDeThongBao,icon);
