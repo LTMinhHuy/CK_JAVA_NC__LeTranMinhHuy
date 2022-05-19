@@ -3,6 +3,7 @@
   # QUẢN LÝ SINH VIÊN
 
   # MÔ TẢ
+  
     > GVHD: Đỗ Phú Huy
 
     > Sinh viên tham gia: Lê Trần Minh Huy
@@ -13,11 +14,11 @@
 
   # NGÀY HOÀN THÀNH
 
-    > 2/4/2022
+    > 30/3/2022 -- ?/5/2022
   
   # LINK FILE BÁO CÁO
 
-    [LINK BÁO CÁO !!!!](https://docs.google.com/document/d/1rBVYNFGWtIhnUAO4O2KHjWa1V-M-bKhu/edit?usp=sharing&ouid=115223677174462434773&rtpof=true&sd=true)
+  > [Link tại đây !!!](https://docs.google.com/document/d/1rBVYNFGWtIhnUAO4O2KHjWa1V-M-bKhu/edit?usp=sharing&ouid=115223677174462434773&rtpof=true&sd=true)
 
   # MỘT SỐ ẢNH SẢN PHẨM
 
